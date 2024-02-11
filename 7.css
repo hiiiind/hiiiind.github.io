@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "faune.otf";
+    src: url(font/faune.otf);
+}
+@font-face {
+    font-family:"light" ;
+    src: url(font/light.ttf);
+}
+
+/*texte*/
+
+title{
+    font-family: "light";
+
+}
+
+h1{
+    font-family: "light";
+    font-size: 40pt;
+    top: 400px; left: 40px;
+    color: #F23D3D;
+}
+h2{
+    font-family: "light";
+    font-size: 40pt;
+    top: 40px; right: 40px;
+    color:#F23D3D;
+}
+h3{
+    font-family: "light";
+    font-size: 25pt;
+    top: 40px; right: 40px;
+    color:#F23D3D;
+}
+h4{
+    font-family: "light";
+    font-size: 16pt;
+    top: 40px; right: 40px;
+    color:#F23D3D;
+}
+
+
+    
+*, ::before, ::after{
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+header{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+
+}
+
+FOOter{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+
+}
+
+
+main{
+    background-color: #D9CCC1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    
+}
+a:link 
+{ 
+ text-decoration:none; 
+} 
