@@ -1,0 +1,105 @@
+@font-face {
+    font-family: "1";
+    src: url(font/1.ttf);
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    padding: 20px;
+    background-image: url("sources/coeur.jpg");
+  }
+  h2{
+    font-family: "1";
+    color: aliceblue;
+    text-shadow: rgb(255, 0, 200) 1px 0 10px;
+  }
+  h3{
+    font-family: "1";
+    color: aliceblue;
+    text-shadow: rgb(255, 0, 200) 1px 0 10px;
+  }
+  h4{
+    /*font-family: ;*/
+    font-size: 18pt;
+  }
+  /* Header/Blog Title */
+  .header {
+    padding: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 25px;
+    color: rgb(255, 255, 255) ;
+    text-align: center;
+    background-image: url("sources/star.jpg");
+    font-family: "1";
+    text-shadow: rgb(212, 0, 255) 1px 0 10px;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn { 
+    float: left;
+    width: 55%;
+    padding-left: 300px;
+    
+    
+    
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    /*background-image: url("sources/fond3.jpg");*/
+   /* background-color: ;*/
+    width: 100%;
+    padding: 20px;
+    border-radius: 30px;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    background-color: rgb(212, 0, 255);
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 10px 5px 5px rgb(255, 255, 255);
+    border-radius: 30px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    background-color: rgb(212, 0, 255);
+    margin-top: 20px;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn { 
+      width: 100%;
+      padding: 0;
+    }
+  }
