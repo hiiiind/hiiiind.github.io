@@ -1,0 +1,276 @@
+
+@font-face {
+    font-family: "faune.otf";
+    src: url(font/faune.otf);
+}
+@font-face {
+    font-family:"light" ;
+    src: url(font/light.ttf);
+}
+
+/*texte*/
+
+title{
+    font-family: "light";
+
+}
+
+h1{
+    font-family: "light";
+    font-size: 40pt;
+    top: 400px; left: 40px;
+    color: rgb(0, 0, 0);
+}
+h2{
+    font-family: "light";
+    font-size: 40pt;
+    top: 40px; right: 40px;
+    color: #000;
+}
+
+
+    
+*, ::before, ::after{
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+header{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+
+}
+
+FOOter{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    color: #c40000;
+
+}
+
+
+
+
+main{
+    background-color: #c40000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    
+
+}
+/*cerle de base */
+
+.box {
+    position: relative;
+    right: 5%;
+    color:rgb(0, 0, 0);
+    cursor: pointer;
+    
+    transition: transform 0.4s cubic-bezier(0.23,1.83,0.42,1.19);
+}
+
+.box:hover {
+    transform: scale(1.2);
+
+
+
+}
+
+.box p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    letter-spacing:3px;
+    font-family:"light" ;
+    color: rgb(0, 0, 0);
+
+}
+
+.circle {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+   /* background: rgb(94, 6, 6);*/
+    border: 3px solid rgb(0, 0, 0);
+    animation: 1s linear infinite alternate boxMagic,
+               4s linear infinite spinning;
+    padding-top: 340px;    
+     
+    
+
+}
+
+@keyframes boxMagic{
+    from {
+        box-shadow: 
+        0 0 0 #000000,
+        0 0 0 #000000,
+        0 0 0 #000000,
+        0 0 0 #000000;
+    }
+    to {
+        box-shadow: 
+        0 -10px 0 #000000,
+        -10px 0 0 #000,
+        0 10px 0 #000000,
+        10px 0 0 #000000;
+
+    }
+}
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*cercle2*/
+.box1 {
+    position: relative;
+     left: 0px;
+    color: #000000;
+    cursor: pointer;
+    
+    transition: transform 0.4s cubic-bezier(0.23,1.83,0.42,1.19);
+}
+
+.box1:hover {
+    transform: scale(1.2);
+
+
+
+}
+
+.box1 p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    letter-spacing:3px;
+    font-family:"light" ;
+    color:#000 ;
+
+}
+
+.circle2 {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+   /* background: rgb(94, 6, 6);*/
+    border: 3px solid #000000;
+    animation: 1s linear infinite alternate boxMagic,
+               4s linear infinite spinning;
+    padding-top: 340px;    
+     
+    
+
+}
+
+@keyframes boxMagic{
+    from {
+        box-shadow: 
+        0 0 0 #000000,
+        0 0 0 #000,
+        0 0 0 #000000,
+        0 0 0 #000000;
+    }
+    to {
+        box-shadow: 
+        0 -10px 0 #000000,
+        -10px 0 0 #000,
+        0 10px 0 #000000,
+        10px 0 0 #000;
+
+    }
+}
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*cercle3*/
+.box3 {
+    position: relative;
+     left: 75px;
+    color: #000000;
+    cursor: pointer;
+    
+    transition: transform 0.4s cubic-bezier(0.23,1.83,0.42,1.19);
+}
+
+.box3:hover {
+    transform: scale(1.2);
+
+
+
+}
+
+.box3 p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    letter-spacing:3px;
+    font-family:"light" ;
+    color:#000 ;
+
+}
+
+.circle3 {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+   /* background: rgb(94, 6, 6);*/
+    border: 3px solid #000000;
+    animation: 1s linear infinite alternate boxMagic,
+               4s linear infinite spinning;
+    padding-top: 340px;    
+     
+    
+
+}
+
+@keyframes boxMagic{
+    from {
+        box-shadow: 
+        0 0 0 #000000,
+        0 0 0 #000,
+        0 0 0 #000000,
+        0 0 0 #000000;
+    }
+    to {
+        box-shadow: 
+        0 -10px 0 #000000,
+        -10px 0 0 #000,
+        0 10px 0 #000000,
+        10px 0 0 #000;
+
+    }
+}
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
