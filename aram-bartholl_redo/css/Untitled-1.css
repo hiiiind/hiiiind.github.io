@@ -1,0 +1,57 @@
+
+/* typo*/  
+@font-face {
+    font-family: "Bold";
+    src: url("ffonts /bold.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "semibold";
+    src: url("fonts /semibold.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "light1";
+    src: url("fonts /light1.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "light2";
+    src: url("fonts /light2.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* texte */  
+
+h1{
+    font-family: "Bold";
+    text-align:left;
+    line-height: 30px;
+    color:coral;
+}
+
+section p{
+    font-family: "light2";
+    font-size: 13pt;
+    line-height: 15pt;
+    color:black;
+    text-align:justify ;
+    hyphens: auto;
+}
+
+h2{
+    font-family: "semibold";
+    font-size: 18pt;
+    line-height: 15pt;
+    color:black;
+    text-align:justify ;
+    hyphens: auto;
+}
