@@ -1,0 +1,21 @@
+@font-face {
+    font-family:"sponge" ;
+    src: url(typo/SpongeMeetsVanilla.ttf);
+}
+
+@font-face {
+    font-family: "djb";
+    src: url("typo/DJB See Spot Run.ttf");
+}
+
+title{
+    font-family: "sponge";
+
+}
+h1{
+    font-family: "sponge";
+    font-size: 40pt;
+   /* top: 400px; left: 40px;*/
+    color: rgb(0, 233, 4);
+
+}
