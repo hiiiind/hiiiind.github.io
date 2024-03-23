@@ -1,0 +1,32 @@
+/* Style du bouton */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000000; /* couleur de fond noire */
+  color: white; /* couleur du texte */
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* Effet au survol du bouton */
+button:hover {
+  background-color: #333333; /* couleur légèrement plus foncée au survol */
+}
+
+/* Style de la ligne de chargement */
+.loader {
+  border: 4px solid #f3f3f3; /* couleur et épaisseur de la bordure */
+  border-top: 4px solid #000000; /* couleur et épaisseur de la bordure supérieure */
+  border-radius: 50%; /* forme du spinner */
+  width: 40px; /* largeur de la ligne de chargement */
+  height: 40px; /* hauteur de la ligne de chargement */
+  animation: spin 1s linear infinite; /* animation */
+  margin: 100px auto; /* centrage vertical et horizontal */
+}
+
+/* Animation de la ligne de chargement */
+@keyframes spin {
+  0% { transform: rotate(0deg); } /* rotation de 0 degré */
+  100% { transform: rotate(360deg); } /* rotation de 360 degrés (une fois complète) */
+}

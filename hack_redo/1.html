@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> No Internet </title>
+    
+      <meta charset="utf-8">
+        <title>Ma page</title>
+        <link href="style.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 100px;
+            font-size: 20px;
+            background: content-box radial-gradient(rgb(20, 220, 97), #87ceeb);
+        }
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1> Whoops, no internet ! </h1>
+        <p> We don’t seem to be able to connect to the Internet. Please check your network connection and try again when the load is complete. </p>
+    </div>
+    
+
+    <!-- Bouton de redirection -->
+    <button onclick="redirection()">click on the  button to reload it </button>
+    
+    <!-- Lien vers la page de destination (remplacez "page-suivante.html" par le nom de votre page de destination) -->
+    <script>
+        function redirection() {
+            window.location.href = "1.html";
+        }
+    </script>
+    <!-- Ligne de chargement -->
+    <div class="loader"></div>
+    
+        
+</body>
