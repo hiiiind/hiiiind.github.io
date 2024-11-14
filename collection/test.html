@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hind NFTs Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: bold;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            margin: 0;
+            height: 100vh;
+            cursor: crosshair;
+            transition: background-color 0.3s ease;
+        }
+
+        h1 {
+            transition: color 0.3s ease;
+            font-size: 50pt;
+        }
+
+        .nft-container {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .nft {
+            position: absolute;
+            cursor: grab;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            text-align: center;
+            user-select: none;
+            z-index: 20;
+            transition: transform 0.2s ease;
+            font-family: "regular";
+            font-size: 10pt;
+        }
+
+        .nft img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+
+        .owner-address {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .nft h2 {
+            color: black;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: auto;
+        }
+
+
+        h3 {
+            color: black;
+            font-size: 20pt;
+            font-family: "bold";
+        }
+
+        p{
+            color: black;
+            font-size: 12pt;
+            font-family: "regular";
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Poor NFT Collection</h1>
+    <div id="nft-container"></div>
+
+    <!-- Zone de texte modulable pour expliquer ton projet -->
+    <div id="explanation-box" class="explanation-box" contenteditable="true">
+      <h3>Déplacez les NFT dans la zone</h3>
+      <p>Dessinez autour des images afin de créer votre propore œuvre.</p>
+    </div>
+
+    <script>
+        let isBlack = false; // Variable pour suivre l'état actuel du fond
+        let drawingColor = 'black'; // Couleur initiale du dessin
+        let isDrawing = false;
+
+        // Initialisation du dessin sur le body
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.zIndex = '1'; // Assure que le canvas est en dessous des autres éléments comme les NFTs
+        canvas.style.pointerEvents = 'auto'; // Permet l'interaction avec le body
+        document.body.appendChild(canvas);
+
+        // Mise à jour de la taille du canvas pour qu'il occupe toute la fenêtre
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        // Lancer le dessin
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            ctx.moveTo(e.clientX, e.clientY);
+        });
+
+        // Dessiner lorsque la souris se déplace
+        canvas.addEventListener('mousemove', (e) => {
+            if (isDrawing) {
+                ctx.lineTo(e.clientX, e.clientY);
+                ctx.strokeStyle = drawingColor; // Utilise la couleur du dessin
+                ctx.lineWidth = 5; // Épaisseur du trait
+                ctx.lineJoin = 'round'; // Joindre les lignes en arrondi pour un effet plus lisse
+                ctx.stroke();
+            }
+        });
+
+        // Arrêter de dessiner
+        canvas.addEventListener('mouseup', () => {
+            isDrawing = false;
+        });
+
+        // Redimensionner le canvas quand la fenêtre est redimensionnée
+        window.addEventListener('resize', resizeCanvas);
+
+        // Initialisation de la taille du canvas
+        resizeCanvas();
+
+        // Charger les NFTs
+        async function fetchNFTs() {
+            const address = 'tz1b43aDDXCU4xyh6ABcVERKr1KGWqxsgD8G';
+            const nftContainer = document.getElementById('nft-container');
+            nftContainer.innerHTML = '';
+
+            // Affiche l'adresse du propriétaire
+            const ownerAddressElement = document.createElement('div');
+            ownerAddressElement.className = 'owner-address';
+            ownerAddressElement.innerText = `Owner: ${address}`;
+            nftContainer.appendChild(ownerAddressElement);
+
+            try {
+                const response = await fetch(`https://api.tzkt.io/v1/tokens/balances?account=${address}&token.standard=fa2&limit=1000`);
+                const data = await response.json();
+
+                if (!data || data.length === 0) {
+                    nftContainer.innerHTML += '<p>No NFTs found for this address.</p>';
+                    return;
+                }
+
+                const nfts = data.filter(item => item.token && item.token.metadata);
+
+                if (nfts.length === 0) {
+                    nftContainer.innerHTML += '<p>No NFTs found for this address.</p>';
+                    return;
+                }
+
+                const createImageElement = (displayUri, name) => {
+                    const image = document.createElement('img');
+                    image.alt = name;
+
+                    const gateways = [
+                        'https://dweb.link/ipfs/',
+                        'https://cloudflare-ipfs.com/ipfs/'
+                    ];
+
+                    let uriIndex = 0;
+                    const loadImage = () => {
+                        if (uriIndex >= gateways.length) {
+                            image.src = 'path_to_fallback_image.jpg';
+                            return;
+                        }
+
+                        image.src = displayUri.replace('ipfs://', gateways[uriIndex]);
+
+                        image.onerror = () => {
+                            uriIndex++;
+                            loadImage();
+                        };
+                    };
+
+                    loadImage();
+                    return image;
+                };
+
+                nfts.forEach((nft, index) => {
+                    const nftElement = document.createElement('div');
+                    nftElement.className = 'nft';
+                    nftElement.style.top = `${50 + index * 50}px`;
+                    nftElement.style.left = `${50 + index * 50}px`;
+
+                    const thumbnailUri = nft.token.metadata.displayUri || '';
+
+                    nftElement.innerHTML = `
+                        <h2>${nft.token.metadata.name}</h2>
+                        <a href="https://tzkt.io/${nft.token.contract.address}/tokens/${nft.token.tokenId}" target="_blank"></a>
+                    `;
+
+                    const imageElement = createImageElement(thumbnailUri, nft.token.metadata.name);
+                    nftElement.querySelector('a').appendChild(imageElement);
+                    nftContainer.appendChild(nftElement);
+
+                    // Fonctionnalité de glisser-déposer
+                    nftElement.addEventListener('mousedown', (e) => {
+                        let shiftX = e.clientX - nftElement.getBoundingClientRect().left;
+                        let shiftY = e.clientY - nftElement.getBoundingClientRect().top;
+
+                        const moveAt = (pageX, pageY) => {
+                            nftElement.style.left = pageX - shiftX + 'px';
+                            nftElement.style.top = pageY - shiftY + 'px';
+                        };
+
+                        const onMouseMove = (event) => {
+                            moveAt(event.pageX, event.pageY);
+                        };
+
+                        document.addEventListener('mousemove', onMouseMove);
+
+                        nftElement.onmouseup = () => {
+                            document.removeEventListener('mousemove', onMouseMove);
+                            nftElement.onmouseup = null;
+
+                            // Changer la couleur de fond après avoir déplacé un NFT
+                            toggleBackgroundColor();
+                        };
+                    });
+
+                    nftElement.ondragstart = () => false; // Désactiver le drag natif pour éviter les conflits
+                });
+            } catch (error) {
+                console.error('Erreur lors de la récupération des NFTs:', error);
+                nftContainer.innerHTML += '<p>Erreur lors de la récupération des NFTs. Veuillez réessayer.</p>';
+            }
+        }
+
+        // Fonction pour alterner la couleur du body
+        function toggleBackgroundColor() {
+            if (isBlack) {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black'; // Le texte devient noir quand le fond est blanc
+                document.querySelector('h1').style.color = 'black'; // Le titre reste noir
+                drawingColor = 'black'; // Le dessin devient noir
+            } else {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white'; // Le texte devient blanc quand le fond est noir
+                document.querySelector('h1').style.color = 'white'; // Le titre devient blanc
+                drawingColor = 'white'; // Le dessin devient blanc
+            }
+
+            isBlack = !isBlack;
+        }
+
+        // Rendre la boîte de texte modulable déplaçable
+          const explanationBox = document.getElementById('explanation-box');
+
+        explanationBox.onmousedown = function (event) {
+          let shiftX = event.clientX - explanationBox.getBoundingClientRect().left;
+          let shiftY = event.clientY - explanationBox.getBoundingClientRect().top;
+
+        function moveAt(pageX, pageY) {
+           explanationBox.style.left = pageX - shiftX + 'px';
+           explanationBox.style.top = pageY - shiftY + 'px';
+        }
+
+        function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+
+       explanationBox.onmouseup = function () {
+        document.removeEventListener('mousemove', onMouseMove);
+        explanationBox.onmouseup = null;
+       };
+     };
+
+       // Empêche le comportement de drag and drop par défaut
+        explanationBox.ondragstart = function () {
+         return false;
+      };
+        window.onload = fetchNFTs;
+    </script>
+</body>
+
+</html>

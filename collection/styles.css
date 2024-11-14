@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "bold";
+    src: url("sources/typos/bold.ttf");
+}
+
+@font-face {
+    font-family: "regular";
+    src: url("sources/typos/regular.ttf");
+}
+
+
+
+
+/* Style pour la zone de texte modulable */
+.explanation-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 15px;
+    width: 300px;
+    min-height: 150px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+    font-family: Arial, sans-serif;
+    font-size: 14pt;
+    resize: both; /* Permet de redimensionner */
+    overflow: auto;
+    z-index: 30; /* Assure que la boîte soit au-dessus des autres éléments */
+}
