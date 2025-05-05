@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Maraisboug</title>
+    <link rel="icon" type="image/png" href="../maraisbourg/src/icon/apple-touch-icon.png">
+    <meta name="description" content="Site archéologique de Maraisbourg">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/histoire.css">
+</head>
+
+<body>
+    <!-- MENU général du site -->
+    <header>
+        <a href="index.html" class="btn btn-default" style="text-decoration:none"><h1>Site archéologique de <br><span>Maraisbourg</span></h1></a>
+
+        <!-- liens/ re direction des rebriques -->
+        <nav id="menu">  
+          <ul> 
+                
+            <div class="ligne"><li><a href="index.html"style="text-decoration:none">archives</a></li></div> 
+            <div class="ligne"><li><a href="histoire.html"style="text-decoration:none">histoire</a></li></div>
+            <div class="ligne"><li><a href="carte.html"style="text-decoration:none">carte</a></li></div>
+            <div class="ligne"><li><a href="generateur.html"style="text-decoration:none">générateur</a></li></div>
+          </ul>
+        </nav>
+
+        <button id="btnabout"><a href="apropos.html">à propos</a></button>
+    </header>
+    
+
+    <main id="histoire.css">
+        <!-- slide show: cartes et vues du site archéologique -->
+
+        <!-- diapo carouselle/ images de cartes à mettre -->
+
+        <div id="slider-wrapper">
+            <div class="slide-container"> 
+               
+                <!-- image 1-->
+                <div class="custom-slider fade">
+                   
+                  <img class="slide-img" src="src/images/carte exemple/3p carte verte.png">
+                  <div class="slide-text">commentaire image 1 vue du site</div>
+                </div>
+
+                <!-- image 2-->
+                <div class="custom-slider fade">
+                
+                  <img class="slide-img" src="src/images/carte exemple/3p carte verte.png">
+                  <div class="slide-text">commentaire image 2 </div>
+                </div>
+                 
+                <!-- image 3-->
+                <div class="custom-slider fade">
+                
+                  <img class="slide-img" src="src/images/carte exemple/3p carte verte.png">
+                   <div class="slide-text">commentaire image 3</div>
+                </div>
+           
+                <!-- flêches-->
+            
+                <!-- gauche -->
+                <a class="prev" onclick="plusSlides(-1)"><img
+                  src="src/images/fleches/gauche.svg" />
+                </a>
+            
+                <!-- droite -->
+                <a class="next" onclick="plusSlides(1)"><img
+                 src="src/images/fleches/fleche slide .svg"/>
+                </a>
+
+            </div>
+          
+          
+          <div class="slide-dot">
+            <span class="dot active" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+          </div>
+        </div>
+
+
+
+        <!-- texte main -->
+
+       <!-- colonne de gauche en position fixe (sticky) -->
+
+
+        <div id="infos-complementaires">
+            <!-- titre 
+           <h1>Site archéologique de <br><span>Maraisbourg</span></h1>
+            <Br></Br>-->
+            <h2> Taille: <br>2,7 hectars  <Br></Br>
+              Localisation: <br>
+                Ville de Maraisboug <Br></Br>
+               Latitude: <br> 37.7749° N <BR></BR>
+               Longitude: <br> -122.4194° W
+            </h2>
+        </div>
+        
+        
+        <!-- colonne de droite texte principal à scroll, drapeau-->
+     
+        <div id="text-principal">
+          Dans l'ombre d'une friche industrielle,&thinsp;là où le passé se cache sous un voile de rouille et d'oubli,&thinsp;gît un trésor inattendu &thinsp;<b>le site de</b> <h2>Maraisbourg</h2>. Nichées au cœur de ce paysage industriel délaissé,&thinsp;près de Saint-Amand-les-Eaux,&thinsp;ces vestiges anciens racontent une histoire oubliée,&thinsp;évoquant un temps <br>où le bruit des machines était remplacé par le mur- mure des civilisations perdues.&thinsp;À première vue,&thinsp;rien ne laisse présager la présence de ces trésors cachés. Les amoncellements de débris et les struc- tures métalliques rouillées dissimulent habilement les traces du passé.&thinsp;Mais pour ceux qui scrutent les profondeurs de cette friche,&thinsp;une découverte extra- ordinaire les attend.
+            <BR></BR>
+            <span><h3>Promotion de la recherche archéologique</h3></span>
+            <br>
+        
+          Dans la continuité des premières fouilles scienti- fiques menées en 1904 par le consul français <br><h2>A.&thinsp;Lesgrand,&thinsp;</h2>l'objectif de la mission est d'effectuer une étude exhaustive du site.&thinsp;Initialement centrés sur les régions du nord de la France entre 2002 et 2004,&thinsp;ses travaux se sont ensuite étendus à l'espace urbain,&thinsp;où la mission intervient de façon ponctuelle depuis 2008 en collaboration avec les musées arché-&thinsp;ologiques de Lille et Amiens. 
+          Un nouveau projet multimédia met en lumière les découvertes de la fouille programmée menée par une équipe spécialisée dans la Protohistoire méditerranéenne. <br>Cette initiative offre une plongée immersive dans le paysage archéologique. En combinant images et vidéos en 3D,&thinsp;photographies,&thinsp;chémas,&thinsp;cartes,&thinsp;entre- tiens filmés avec des experts,&thinsp;cette nouvelle mis- sion à permis la dé- couverte de vestiges humains et animaux de plus de 11 500 ans. Même si les caractéristiques du bestiaire traditionnel du pal- éolithique sont retrou- vables,&thinsp;il est encore difficile aujourd’hui d’identifier avec précision la nature de ces ossements. Créatures,&thinsp;animales <br>où civilisation,&thinsp;ces questionnements restes actuel- lement sans réponses. 
+      
+        </div>
+
+
+
+
+
+
+    </main>
+    <script src="js/script.js"></script>
+
+
+
+</body>

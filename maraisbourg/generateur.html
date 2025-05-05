@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Maraisbourg</title>
+    <link rel="icon" type="image/png" href="../maraisbourg/src/icon/apple-touch-icon.png">
+    <meta name="description" content="Site archéologique de Maraisbourg">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/generateur.css">
+</head>
+
+<body>
+     <!-- MENU -->
+     <header>
+        <a href="index.html" class="btn btn-default" style="text-decoration:none"><h1>Site archéologique de <br><span>Maraisbourg</span></h1></a>
+
+        <!-- liens/ re direction des rebriques -->
+        <nav id="menu">  
+          <ul> 
+                
+            <div class="ligne"><li><a href="index.html"style="text-decoration:none">archives</a></li></div> 
+            <div class="ligne"><li><a href="histoire.html"style="text-decoration:none">histoire</a></li></div>
+            <div class="ligne"><li><a href="carte.html"style="text-decoration:none">carte</a></li></div>
+            <div class="ligne"><li><a href="generateur.html"style="text-decoration:none">générateur</a></li></div>
+          </ul>
+        </nav>
+
+        <button id="btnabout"><a href="apropos.html">à propos</a></button>
+    </header>
+
+    <main>
+     <div class="gauche">
+        <div class="slide-container"> 
+               
+            <!-- image 1-->
+            <div class="custom-slider fade">
+               
+              <img class="slide-img" src="src/images/carte exemple/3p carte verte.png">
+
+            </div>
+
+            <!-- image 2-->
+            <div class="custom-slider fade">
+            
+              <img class="slide-img" src="src/images/carte exemple/3p carte verte.png">
+              
+            </div>
+             
+            <!-- image 3-->
+            <div class="custom-slider fade">
+            
+              <img class="slide-img" src="src/images/carte exemple/3p carte verte.png">
+               
+            </div>
+       
+            <!-- flêches-->
+        
+            <!-- gauche -->
+            <a class="prev" onclick="plusSlides(-1)"><img
+              src="src/images/fleches/gauche.svg" />
+            </a>
+        
+            <!-- droite -->
+            <a class="next" onclick="plusSlides(1)"><img
+             src="src/images/fleches/fleche slide .svg"/>
+            </a>
+
+         
+        </div>
+     </div>
+
+
+     <div class="droit">
+        <div class="slide-container"> 
+               
+            <!-- image 1-->
+            <div class="custom-slider fade">
+               
+              <img class="slide-img" src="src/images/carte exemple/3p carte verte.png">
+
+            </div>
+
+            <!-- image 2-->
+            <div class="custom-slider fade">
+            
+              <img class="slide-img" src="src/images/carte exemple/3p carte verte.png">
+              
+            </div>
+             
+            <!-- image 3-->
+            <div class="custom-slider fade">
+            
+              <img class="slide-img" src="src/images/carte exemple/3p carte verte.png">
+               
+            </div>
+       
+            <!-- flêches-->
+        
+            <!-- gauche -->
+            <a class="prev" onclick="plusSlides(-1)"><img
+              src="src/images/fleches/gauche.svg" />
+            </a>
+        
+            <!-- droite -->
+            <a class="next" onclick="plusSlides(1)"><img
+             src="src/images/fleches/fleche slide .svg"/>
+            </a>
+
+         
+        </div>
+     </div>
+        
+      
+
+     <div class="nom">    
+        <input
+        type="text"
+        id="uname"
+        name="name"
+        placeholder=" entrez le nom de votre os" />
+      </div>
+
+     
+      <div class="texte">
+        Grâce à nos archives, concevez et nommez vos propres ossements. Déroulez les images en appuyant sur les flèches <br>et produisez de tout nouveaux vestiges.
+       <BR></BR>
+        
+        À vous de jouer !
+      </div>
+
+        
+
+     
+        
+    </main>
+    <script src="js/generateur.js"></script>
+</body>
+

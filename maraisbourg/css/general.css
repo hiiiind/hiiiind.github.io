@@ -1,0 +1,124 @@
+/*typo site*/
+@font-face {
+    font-family: "Gulax";/*font titre*/
+    src: url(../src/typos/Gulax-Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBM Plex Mono";/*font texte*/
+    src: url(../src/typos/IBMPlexRegular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBM Plex Mono";/*font texte italique titre du menu*/
+    src: url(../src/typos/Mono-Italic.ttf);
+    font-weight: normal;
+    font-style: italic;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* variables site*/
+:root{
+    --green: #018c4b;
+    --beige: #ebece6;
+    --white: #f5f5f5;
+    --mainfontsize: 18px;
+    --mainlineheight: 22px;
+}
+
+body{/*variantes des fonts*/
+    width: 100%;
+    padding-left: 260px;
+    min-height: 100vh;
+    font-family: 'IBM Plex Mono';
+    font-size: var(--mainfontsize);
+    line-height: var(--mainlineheight);
+    color: var(--green);
+    /**/
+    background-color:var(--beige);
+}
+
+/* === MENU === */
+
+.ligne{
+    color: #018c4b;
+}
+.ligne:hover{
+    color: #018c4b;
+    text-decoration: underline;
+}
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    /* width: 12,5%; */
+    height: 100vh;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: var(--mainlineheight);
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+header a{/*couleur texte main*/
+    align-self: start;
+    color: var(--green);
+    text-decoration: none;
+    display: block;
+}
+header h1{
+    font-size: var(--mainfontsize);
+    line-height: 30px;
+    font-style: italic;
+    font-weight: normal;
+}
+header h1 span{/*font titre*/
+    font-family: 'Gulax';
+    font-size: 45px;
+    font-style: normal;
+    display: inline-block;
+    transform: translateX(-1px);
+}
+header li{
+    list-style: none;
+}
+header button{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background: none;
+}
+
+/* placement grille header */
+header #title{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+header #menu{
+    grid-row: 3/4;
+    grid-column: 1/2;
+    align-self: center;
+}
+header #btnabout{
+    grid-row: 4/5;
+    grid-column: 1/2;
+    align-self: end;
+    justify-self: start;
+    /**/
+    font-family: 'IBM Plex Mono';
+    font-size: var(--mainfontsize);
+    list-style: var(--mainlineheight);
+}

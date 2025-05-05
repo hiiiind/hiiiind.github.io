@@ -1,0 +1,821 @@
+
+@font-face {
+    font-family: "IBM bold";
+    src: url(../src/typos/Gulax-Regular.otf);
+}
+
+@font-face {
+    font-family: 'bold';
+    src: url(../src/typos/IBMPlexMono-Bold.ttf);
+}
+
+#main-index{
+    width: calc(100vw - 260px);
+    min-height: 100vh;
+    position: relative;
+}
+
+
+/* === OS reference === */
+/* === OS 01 === */
+
+svg{
+    position: absolute;
+}
+svg[data-name="os1"]{
+    top: -2%;
+    right: -5%;
+    width: 130%;
+}
+svg .zone{
+    cursor: pointer;
+}
+svg image.fond{
+    opacity: 1;
+ }
+svg image.fond.hidden{
+   opacity: 0;
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+
+
+/* slides/fiche 1 ref*/
+section.slide{
+    position: fixed;
+    top: 0;
+    right: -600px;
+    
+    width: 600px;
+    height: 100vh;
+    padding: 5px;
+    overflow-y: auto;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
+
+    background-color: #ebf9f4;
+    border-left: 1px solid var(--green);
+
+     transition: right 300ms ease-in;
+}
+section.slide.opened{
+    right: 0;
+    
+    transition: right 300ms ease-in;
+}
+
+section.slide button{
+    height: 50px;;
+    margin-right: 95%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    /**/
+    border: none;
+    background: none;
+    cursor: pointer;
+    /**/
+    font-family: 'IBM Plex Mono';
+    font-size: var(--mainfontsize);
+    color: var(--green);
+}
+
+
+
+
+/* slides/fiche 1 ref*/
+section.slide{
+    position: fixed;
+    top: 0;
+    right: -600px;
+    
+    width: 600px;
+    height: 100vh;
+    padding: 5px;
+    overflow-y: auto;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
+
+    background-color: #ebf9f4;
+    border-left: 1px solid var(--green);
+
+     transition: right 300ms ease-in;
+}
+section.slide.opened{
+    right: 0;
+    
+    transition: right 300ms ease-in;
+}
+
+section.slide button{
+    height: 50px;;
+    margin-right: 95%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    /**/
+    border: none;
+    background: none;
+    cursor: pointer;
+    /**/
+    font-family: 'IBM Plex Mono';
+    font-size: var(--mainfontsize);
+    color: var(--green);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*organisation fiche*/
+
+
+
+/*texte principal de droite*/
+.texte{
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding-top: 15%;
+    padding-left:20%;
+    padding-right:25px ;
+    padding-bottom:12px;
+    text-align: justify;
+
+}
+
+h2 {/*mots en gras*/
+    font-family: 'bold';
+    font-size: 17px;
+    font-style: normal;
+    display: inline-block;
+    transform: translateX(-1px);
+}
+
+
+    
+    
+
+/*texte de gauche*/
+h4{
+    margin-top: 5%;
+    font-size: 14pt;
+    padding-left: -250px;
+
+}
+
+.image{
+    margin-left: 25px;
+    
+}
+
+
+img{
+    transform:rotate(-70deg);
+    margin-top: 200px;
+    
+    margin-left: -15%;
+    width: 120%;
+    
+}
+
+.infos{
+    padding-top: 350px;
+    font-family: 'bold';
+    font-size: 9pt;
+    line-height: 12pt;
+    font-style: normal;
+    display: inline-block;
+    margin-left: -200px;
+    margin-top: 200px;
+
+}
+
+/*fiche 3*/
+
+
+.titreos3{
+    padding-top: 15px;
+    margin-left: 25px;
+    
+    
+}
+.image3{
+    margin-left: 25px;
+    width:60%;
+    transform:rotate(65deg);
+    
+}
+.infos3{
+    font-family: 'bold';
+    font-size: 9pt;
+    line-height: 12pt;
+    font-style: normal;
+    display: inline-block;
+    margin-left: 170%;
+    margin-right:-200% ;
+    margin-top: -110%;
+
+    
+}
+.texte3{
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding-top: 5%;
+    margin-left: -130px;
+    margin-right: 25px;
+    padding-bottom:12px;
+    text-align: justify;
+    
+
+}
+
+
+
+/*fiche 4*/
+
+
+.titreos4{
+    padding-top: 15px;
+    margin-left: 25px;
+    
+    
+}
+.image4{
+    margin-top: -340%;
+    margin-left: -220px;
+    width:170%;
+    transform:rotate(25deg);
+    
+}
+.infos4{
+    
+    font-family: 'bold';
+    font-size: 9pt;
+    line-height: 12pt;
+    font-style: normal;
+    display: inline-block;
+    margin-left: 45%;
+    margin-top: 90%;
+
+}
+.texte4{
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding-top: 30%;
+    margin-left: -130px;
+    margin-right: 25px;
+    padding-bottom:12px;
+    text-align: justify;
+}
+
+/*fiche 5*/
+
+
+.titreos5{
+    padding-top: 15px;
+    margin-left: 25px;
+    
+    
+}
+.image5{
+    margin-top: -340%;
+    margin-left: -220px;
+    width:170%;
+    transform:rotate(25deg);
+    
+}
+.infos5{
+    
+    font-family: 'bold';
+    font-size: 9pt;
+    line-height: 12pt;
+    font-style: normal;
+    display: inline-block;
+    margin-left: 45%;
+    margin-top: 120%;
+
+}
+.texte5{
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding-top: 20%;
+    margin-left: -130px;
+    margin-right: 25px;
+    padding-bottom:12px;
+    text-align: justify;
+}
+
+/*fiche 6*/
+
+
+.titreos6{
+    padding-top: 15px;
+    margin-left: 25px;
+    
+    
+}
+.image6{
+    width:350%;
+    margin-top: -550%;
+    margin-left: -50%;
+    margin-right: 150%;
+    transform:rotate(15deg);
+    
+}
+.infos6{
+    
+    font-family: 'bold';
+    font-size: 9pt;
+    line-height: 12pt;
+    font-style: normal;
+    display: inline-block;
+    margin-left: 60%;
+    margin-top: 90%;
+
+}
+.texte6{
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding-top: 20%;
+    margin-left: -35px;
+    margin-right: 25px;
+    padding-bottom:12px;
+    text-align: justify;
+}
+
+/*fiche 7*/
+
+
+.titreos7{
+    padding-top: 15px;
+    margin-left: 25px;
+    
+    
+}
+.image7{
+    width: 250%;
+    margin-top: -500%;
+    margin-left: -250px;
+    
+    transform:rotate(25deg);
+    
+}
+.infos7{
+    
+    font-family: 'bold';
+    font-size: 9pt;
+    line-height: 12pt;
+    font-style: normal;
+    display: inline-block;
+    margin-left: 60%;
+    margin-top: 110%;
+
+}
+.texte7{
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding-top: 30%;
+    margin-left: -20px;
+    margin-right: 25px;
+    padding-bottom:12px;
+    text-align: justify;
+}
+
+/*fiche 8*/
+
+
+.titreos8{
+    padding-top: 15px;
+    margin-left: 25px;
+    
+    
+}
+
+.image8{
+    transform:rotate(-30deg);
+    width: 200%;
+    margin-top: -340%;
+    margin-right: 100px;
+    margin-left: 130%;
+    margin-bottom: 10%;
+    
+    
+    
+}
+.infos8{
+    
+    font-family: 'bold';
+    font-size: 9pt;
+    line-height: 12pt;
+    font-style: normal;
+    display: inline-block;
+    margin-left: 60%;
+    margin-top: 150%;
+    margin-bottom: 10%;
+
+}
+
+.texte8{
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding-top: 15%;
+    margin-left: -120px;
+    margin-right: 25px;
+    padding-bottom:12px;
+    text-align: justify;
+}
+/*fiche 9*/
+
+
+.titreos9{
+    padding-top: 15px;
+    margin-left: 25px;
+    
+    
+}
+.image9{
+    width: 160%;
+    margin-top: -610%;
+    margin-left: -850px;
+    
+    transform:rotate(70deg);
+    
+}
+.infos9{
+    
+    font-family: 'bold';
+    font-size: 9pt;
+    line-height: 12pt;
+    font-style: normal;
+    display: inline-block;
+    margin-left: 60%;
+    margin-top: 70%;
+
+}
+.texte9{
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding-top: 20%;
+    margin-left: -70px;
+    margin-right: 25px;
+    padding-bottom:12px;
+    text-align: justify;
+}
+
+/*fiche 10*/
+
+.image10{
+    width:350%;
+    margin-top: -550%;
+    margin-left: -50%;
+    margin-right: 150%;
+    transform:rotate(15deg);
+    
+}
+.titreos10{
+    padding-top: 15px;
+    margin-left: 25px;
+    
+    
+}
+
+.infos10{
+    
+    font-family: 'bold';
+    font-size: 9pt;
+    line-height: 12pt;
+    font-style: normal;
+    display: inline-block;
+    margin-left: 60%;
+    margin-top: 70%;
+
+}
+.texte10{
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding-top: 20%;
+    margin-left: -70px;
+    margin-right: 25px;
+    padding-bottom:12px;
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+/* === OS 02 === */
+
+svg{
+    position: absolute;
+}
+svg[data-name="os2"]{
+    top: 120%;
+    right: -35%;
+    width: 40%;
+    transform: rotate(90deg);
+}
+svg .zone{
+    cursor: pointer;
+}
+svg image.fond{
+    opacity: 1;
+ }
+svg image.fond.hidden{
+   opacity: 0;
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+
+
+/* === OS 03 === */
+
+svg{
+    position: absolute;
+}
+svg[data-name="os3"]{
+    top: 100%;
+    right: 15%;
+    width: 150%;
+}
+svg .zone{
+    cursor: pointer;
+}
+svg image.fond{
+    opacity: 1;
+    /*width: 600%;*/
+    
+}
+
+svg image.fond.hidden{
+   opacity: 0;
+   
+   
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+/* === OS 04 === */
+
+svg{
+    position: absolute;
+}
+svg[data-name="os4"]{
+    top: 90%;
+    right: -55%;
+    width: 140%;
+}
+svg .zone{
+    cursor: pointer;
+}
+svg image.fond{
+    opacity: 1;
+    /*width: 600%;*/
+    
+ }
+svg image.fond.hidden{
+   opacity: 0;
+   
+   
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+/* === OS 05 === */
+
+svg{
+    position: absolute;
+}
+svg[data-name="os5"]{
+    top: 225%;
+    right: 70%;
+    width: 40%;
+}
+svg .zone{
+    cursor: pointer;
+}
+svg image.fond{
+    opacity: 1;
+    
+    
+ }
+svg image.fond.hidden{
+   opacity: 0;
+   
+   
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+
+
+/* === OS 06 === */
+
+svg{
+    position: absolute;
+}
+svg[data-name="os6"]{
+    top: 140%;
+    right: 45%;
+    width: 30%;
+}
+svg .zone{
+    cursor: pointer;
+}
+svg image.fond{
+    opacity: 1;
+    /*width: 600%;*/
+    
+ }
+svg image.fond.hidden{
+   opacity: 0;
+   
+   
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+
+/* === OS 07 === */
+
+svg{
+    position: absolute;
+}
+svg[data-name="os7"]{
+    top: 200%;
+    right: -40%;
+    width: 170%;
+   
+    transform: rotate(25deg)
+}
+svg .zone{
+    cursor: pointer;
+}
+svg image.fond{
+    opacity: 1;
+    /*width: 600%;*/
+    
+ }
+svg image.fond.hidden{
+   opacity: 0;
+   
+   
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+
+/* === OS 08 === */
+
+svg{
+    position: absolute;
+}
+svg[data-name="os8"]{
+    top: 200%;
+    right: 45%;
+    width: 40%;
+    transform: rotate(25deg)
+}
+svg .zone{
+    cursor: pointer;
+}
+svg image.fond{
+    opacity: 1;
+    /*width: 600%;*/
+    
+ }
+svg image.fond.hidden{
+   opacity: 0;
+   
+   
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+
+
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+/* === OS 9 === */
+
+svg{
+    position: absolute;
+}
+svg[data-name="os9"]{
+    top: 50%;
+    right: -50%;
+    width: 80%;
+    transform: rotate(-15deg)
+}
+svg .zone{
+    cursor: pointer;
+}
+svg image.fond{
+    opacity: 1;
+    /*width: 600%;*/
+    
+ }
+svg image.fond.hidden{
+   opacity: 0;
+   
+   
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+
+/* === OS 010 === */
+
+svg{
+    position: absolute;
+}
+svg[data-name="os10"]{
+    top: 190%;
+    right: -45%;
+    width: 40%;
+    transform: rotate(80deg)
+}
+svg .zone{
+    cursor: pointer;
+}
+svg image.fond{
+    opacity: 1;
+    /*width: 600%;*/
+    
+ }
+svg image.fond.hidden{
+   opacity: 0;
+   
+   
+}
+
+/* style de la zone d'interaction dans les éléments svg */
+.cls-1{
+    fill: rgba(255, 255, 255, 0);
+    stroke-width: 0px;
+}
+
+

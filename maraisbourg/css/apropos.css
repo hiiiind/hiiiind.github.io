@@ -1,0 +1,81 @@
+/*font gras bold pour texte complémentaires*/
+@font-face {
+    font-family: 'bold';
+    src: url(../src/typos/IBMPlexMono-Bold.ttf);
+}
+
+/* placement grille header modèle de base */
+
+
+main{
+  width: 100%;
+  height: 100vh;
+  padding-top: 50px;
+  padding-right: 25px;
+  padding-left: 70px;
+  padding-bottom:12px;
+  overflow-y: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 40px;
+
+  position: relative;
+}
+
+
+#slider-wrapper{
+  grid-column: 1/3;
+  grid-row: 1/2;
+
+  justify-self: stretch;
+}
+
+/*textes*/
+#infos-complementaires{
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: stretch;
+  align-self: start;
+
+  position: sticky;
+  top: 100px;
+  left: 0;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+
+#text-principal{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+
+
+
+/*variations graisses font */
+
+h2 { /*infos-complementaires*/
+  font-family: 'bold';
+  font-size: 17px;
+  font-style: normal;
+  display: inline-block;
+  transform: translateX(-1px);
+}
+main h1{
+  font-size: var(--mainfontsize);
+  list-style: var(--mainlineheight);
+  font-style: italic;
+  font-weight: normal;
+}
+
+main h1 span{/*infos-complementaires titre: maraisbourg*/
+  font-family: 'Gulax';
+  line-height:30pt;
+  font-size: 45px;
+  font-style: normal;
+  display: inline-block;
+  transform: translateX(-1px);
+}
